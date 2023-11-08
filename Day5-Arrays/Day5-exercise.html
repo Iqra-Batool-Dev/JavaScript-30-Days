@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //////////////"""""""""""""Exercise of Arrays"""""""""""""""""""""""//////
+      //_____________________LEVEL 1______________________//
+      //Q No.1
+      const arr = Array();
+      //Q No.2
+      const arr2 = [2, 3, 4, 5, 6, 7, 8];
+      //Q No.3
+      let length = arr2.length;
+      console.log(length);
+      //Q No.4
+      let mid = (0 + (length - 1)) / 2;
+      console.log(mid);
+      console.log(arr2[0], arr2[mid], arr2[length - 1]);
+      //Q No.5
+      const mixedDataTypes = [1, "h", "iqra", 56, "ab", 2];
+      console.log(mixedDataTypes);
+      console.log(mixedDataTypes.length);
+      //Q No.6
+      const itCompanies = [
+        "Facebook",
+        "Google",
+        "Microsoft",
+        "Apple",
+        "IBM",
+        "Oracle",
+        "Amazon",
+      ];
+      // console.log(itCompanies);
+      // console.log(itCompanies.length);
+      // console.log(itCompanies[0], itCompanies[mid],itCompanies[length-1]);
+      // console.log(itCompanies[0].toUpperCase());
+      // console.log(itCompanies[2].toUpperCase());
+      // console.log(itCompanies[3].toUpperCase());
+      // console.log(itCompanies[4].toUpperCase());
+      // console.log(itCompanies[5].toUpperCase());
+      // console.log(itCompanies[6].toUpperCase());
+      // console.log(itCompanies.toString()+" are big IT companies.");
+      // console.log(itCompanies.includes("Facebook"));
+      //Q No.7
+      const numeric = [1, 7, 4, 3, 9, 2, 0];
+      console.log(numeric);
+      console.log(numeric.sort());
+      //Q No.8
+      console.log(numeric.reverse());
+
+      //Q No.9  Filter out companies which have more then one 'o' without he filter method.
+      itCompanies.forEach((element) => {
+        let count = 0;
+        const elementArray = element.split("");
+        elementArray.forEach((letter) => {
+          if (letter === "o" || letter === "O") {
+            count++;
+          }
+        });
+        if (count >= 2) {
+          console.log(element);
+        } else {
+          count = 0;
+        }
+      });
+
+      //Q No.10 slice out the first three companies from array.
+      console.log(itCompanies.slice(0, 3));
+      //Q No.11 slice out the first three companies from array.
+      let length2 = itCompanies.length;
+      console.log(itCompanies.slice(length2 - 3));
+      //Q No.12. slice out the middle iT companies from array.
+      console.log(itCompanies.slice((length2 - 1) / 2, length2 / 2 + 1));
+      //Q No.12. remove the first it companies from array.
+      // console.log(itCompanies.shift());
+      // console.log(itCompanies.pop());
+      //console.log(itCompanies.splice(0,length2));
+      //Q No.13.remove the middle it companies  from array.
+      let middle = (length2 - 1) / 2;
+      console.log(itCompanies.splice(middle, 1));
+
+      //_____________________________LEVEL 2__________________________
+
+      //Q No.1
+      //First remove all the punctuations from the following string and change it into an array and count the number of words in the array
+
+      let text =
+        "I love teaching and empowering people. I teach HTML, CSS, JS, React, Python.";
+      const arr3 = text.replace(/[^a-zA-Z]/g, " ");
+      console.log(arr3);
+      const newArr = arr3.split(" ");
+      console.log(newArr);
+      console.log(newArr.length);
+
+      //Q No.2
+      //In the following shopping cart add, delete, and edit the items.
+      const shoppingCart = ["Milk", "coffee", "Tea", "Honey"];
+
+      // Adding "Meat" at beginning of cart
+      if (shoppingCart.includes("Meat")) {
+        console.log("This item is already in cart");
+      } else {
+        console.log(shoppingCart.unshift("Meat"));
+        console.log(shoppingCart);
+      }
+
+      // Adding "Sugar" at the end of cart
+
+      if (shoppingCart.includes("Sugar")) {
+        console.log("This item is already in cart");
+      } else {
+        console.log(shoppingCart.push("Sugar"));
+        console.log(shoppingCart);
+      }
+
+      // Remove Honey if you are allergic to honey.
+      const index = shoppingCart.indexOf("Honey");
+      if (index !== -1) {
+        let removed = shoppingCart.splice(index, 1);
+        console.log("WE removed:" + removed);
+        console.log(shoppingCart);
+      } else {
+        console.log("This item is not exist");
+      }
+
+      //Modify "tea" to "Green Tea".
+      // console.log(shoppingCart.replace('Tea', 'Green Tea'))
+      const myIndex = shoppingCart.indexOf("Tea");
+      if (myIndex !== -1) {
+        shoppingCart[myIndex] = "Green Tea";
+        console.log(shoppingCart);
+      } else {
+        console.log("this item is not exist");
+      }
+
+      // Make a country array .in this array check if "Ethiopia" exists in the array if it exists print "ETHIOPIA". if it does not exist add to the countries list.
+      const country = ["Pakistan", "India", "Dubai", "Ethiopia"];
+      let position = country.indexOf("Ethiopia");
+      if (position !== -1) {
+        console.log(country[position].toUpperCase());
+      } else {
+        console.log("'Ethiopia' is not exist.");
+      }
+
+      //IN webTech array check if Sass exists in the array and if it exist  print "Sass is a css preprocess". if it does not exist add Sass to the array and print the array.
+
+      const webTech = ["Html", "Css", "Tech", "Sass"];
+      if (webTech.includes("Sass")) {
+        console.log("Sass is a css preprocess");
+      } else {
+        webTech.push("Sass");
+        console.log(webTech);
+      }
+
+      //concatenate the following two variables and store it in a fullstack variable;
+
+      const frontEnd = ["HTML", "CSS", "Js", "React", "Redux"];
+      const backEnd = ["Node", "Express", "MongoDB"];
+      const fullStack = frontEnd.concat(backEnd);
+      console.log(fullStack);
+
+      //_________________________LEVEL 03_____________________________
+
+      const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24];
+      let n = ages.length;
+      console.log(ages.sort());
+      console.log(Math.min(...ages)); /// (...)this is called spread operator used for arrays.
+      console.log(Math.max(...ages));
+
+      // Find the average age(all items divided by number of items)
+      // const average=(a ,n)=>{
+      //     for(var i=0; i<n; i++){
+      //         var sum=0;
+      //         sum+=a[i];
+      //     }
+      //     return parseFloat(sum/2);
+      // }
+      // console.log(average(ages,n));
+      //___________or___________
+      ages.forEach((item) => {
+        let sum = 0;
+        sum += item;
+        console.log(parseFloat(sum / 2));
+      });
+
+      //Find the range of ages(max minus min)
+      const range = Math.max(...ages) - Math.min(...ages);
+      console.log(range);
+
+      //find the middle countries from countries array.
+      const countries = [
+        "Afghanistan",
+        "Albania",
+        "Algeria",
+        "Andorra",
+        "Angola",
+        "Antigua and Barbuda",
+        "Argentina",
+        "Armenia",
+        "Australia",
+        "Austria",
+        "Azerbaijan",
+        "Bahamas",
+        "Bahrain",
+        "Bangladesh",
+        "Barbados",
+        "Belarus",
+        "Belgium",
+        "Belize",
+        "Benin",
+        "Bhutan",
+        "Bolivia",
+        "Bosnia and Herzegovina",
+        "Botswana",
+        "Brazil",
+        "Brunei",
+        "Bulgaria",
+        "Burkina Faso",
+        "Burundi",
+        "Cambodia",
+        "Cameroon",
+        "Canada",
+        "Cape Verde",
+        "Central African Republic",
+        "Chad",
+        "Chile",
+        "China",
+        "Colombi",
+        "Comoros",
+        "Congo (Brazzaville)",
+        "Congo",
+        "Costa Rica",
+        "Cote d'Ivoire",
+        "Croatia",
+        "Cuba",
+        "Cyprus",
+        "Czech Republic",
+        "Denmark",
+        "Djibouti",
+        "Dominica",
+        "Dominican Republic",
+        "East Timor (Timor Timur)",
+        "Ecuador",
+        "Egypt",
+        "El Salvador",
+        "Equatorial Guinea",
+        "Eritrea",
+        "Estonia",
+        "Ethiopia",
+        "Fiji",
+        "Finland",
+        "France",
+        "Gabon",
+        "Gambia, The",
+        "Georgia",
+        "Germany",
+        "Ghana",
+        "Greece",
+        "Grenada",
+        "Guatemala",
+        "Guinea",
+        "Guinea-Bissau",
+        "Guyana",
+        "Haiti",
+        "Honduras",
+        "Hungary",
+        "Iceland",
+        "India",
+        "Indonesia",
+        "Iran",
+        "Iraq",
+        "Ireland",
+        "Israel",
+        "Italy",
+        "Jamaica",
+        "Japan",
+        "Jordan",
+        "Kazakhstan",
+        "Kenya",
+        "Kiribati",
+        "Korea, North",
+        "Korea, South",
+        "Kuwait",
+        "Kyrgyzstan",
+        "Laos",
+        "Latvia",
+        "Lebanon",
+        "Lesotho",
+        "Liberia",
+        "Libya",
+        "Liechtenstein",
+        "Lithuania",
+        "Luxembourg",
+        "Macedonia",
+        "Madagascar",
+        "Malawi",
+        "Malaysia",
+        "Maldives",
+        "Mali",
+        "Malta",
+        "Marshall Islands",
+        "Mauritania",
+        "Mauritius",
+        "Mexico",
+        "Micronesia",
+        "Moldova",
+        "Monaco",
+        "Mongolia",
+        "Morocco",
+        "Mozambique",
+        "Myanmar",
+        "Namibia",
+        "Nauru",
+        "Nepal",
+        "Netherlands",
+        "New Zealand",
+        "Nicaragua",
+        "Niger",
+        "Nigeria",
+        "Norway",
+        "Oman",
+        "Pakistan",
+        "Palau",
+        "Panama",
+        "Papua New Guinea",
+        "Paraguay",
+        "Peru",
+        "Philippines",
+        "Poland",
+        "Portugal",
+        "Qatar",
+        "Romania",
+        "Russia",
+        "Rwanda",
+        "Saint Kitts and Nevis",
+        "Saint Lucia",
+        "Saint Vincent",
+        "Samoa",
+        "San Marino",
+        "Sao Tome and Principe",
+        "Saudi Arabia",
+        "Senegal",
+        "Serbia and Montenegro",
+        "Seychelles",
+        "Sierra Leone",
+        "Singapore",
+        "Slovakia",
+        "Slovenia",
+        "Solomon Islands",
+        "Somalia",
+        "South Africa",
+        "Spain",
+        "Sri Lanka",
+        "Sudan",
+        "Suriname",
+        "Swaziland",
+        "Sweden",
+        "Switzerland",
+        "Syria",
+        "Taiwan",
+        "Tajikistan",
+        "Tanzania",
+        "Thailand",
+        "Togo",
+        "Tonga",
+        "Trinidad and Tobago",
+        "Tunisia",
+        "Turkey",
+        "Turkmenistan",
+        "Tuvalu",
+        "Uganda",
+        "Ukraine",
+        "United Arab Emirates",
+        "United Kingdom",
+        "United States",
+        "Uruguay",
+        "Uzbekistan",
+        "Vanuatu",
+        "Vatican City",
+        "Venezuela",
+        "Vietnam",
+        "Yemen",
+        "Zambia",
+        "Zimbabwe",
+      ];
+      console.log(countries.splice(middle, 10));
+      console.log(countries.slice(0, 10));
+      const middleIndex = Math.ceil(countries.length / 2);
+      const firstHalf = countries.slice(0, middleIndex);
+      const secondHalf = countries.splice(middleIndex);
+      console.log(firstHalf);
+      console.log(secondHalf);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //------Primitive data types----------//
+        let word= "Jvascript";
+        word[0]='y';
+        console.log(word);
+
+        //non- primitives data types-----------like arrays and objects//
+        let array=[1,2,3];
+        let array2=[1,2,3];
+        console.log(array== array2) // it will show false;
+        //let see another example
+        let user1 = {
+            name:'iqra',
+            age:20,
+            role:'teaching'
+        }
+        let user2={
+            name:'iqra',
+            age:20,
+            role:'teaching'
+        }
+        console.log(user1==user2);//it also will show false
+
+        //--------Declaring number data types---
+
+        let age=20;
+        const gravity= 9.81;
+        const pi=3.14;
+        let mass=72;
+        const boilingPoint=100;
+        const bodyTemp = 37;
+        console.log(age,gravity, mass , pi, boilingPoint , bodyTemp);
+
+        ///---------------Math Object ---------//
+        //---------In javascript the math object provides a lots of methods to work with numbers;----///
+        const PI = Math.PI;
+        console.log(PI);
+        const e= Math.E;
+        console.log(e);
+        //rounding to the closest number 
+        //if above .5 up if less 0.5 down rounding
+        console.log(Math.round(PI));
+        console.log(Math.round(gravity));
+        console.log(Math.floor(pi)); //always rounds down and returns the largest integer less than or equal to a given number
+        console.log(Math.ceil(pi));//always returns the greater than or equal to a given number
+        console.log(Math.min(-5, 3, 20,4, 5 ,10));
+        console.log(Math.max(-5, 3, 20,4, 5 ,10));
+
+        const random=Math.random()//create random numbers between 0 to 0.99999
+        console.log(random);
+
+        //let us create random number from 0 to 10;
+        const num = Math.floor(Math.random()*11);
+        console.log(num);
+
+        console.log(Math.abs(-10));// it will return absolute value like 10;
+        console.log(Math.sqrt(100))//square root
+        console.log(Math.pow(3,3));//power
+        console.log(Math.log(10));//logarithm
+        console.log(Math.LN10);//natural logarithm
+        console.log(Math.sin(0));//Trigonometry
+
+        //----------Strings-------------//
+        //--------strings can be written------//
+        let space = ''; //an empty space string
+        let firstName = 'iqra';
+        let second = "the saying , 'seeing is believing' is not correct in 2020";
+        let country = 'helsinki';
+
+        //----------String concetination---------//
+        let fullName = firstName + space + country;
+        console.log(fullName);
+        //------------Escape Sequences in String------------//
+        console.log('this is tree \n this is non tree');
+        // \\:tab, means Back slash , \t: tab , means 8 spaces , \':Single quote(') , \": Double quote(")
+        console.log('Day 2\t3\t4');
+        console.log('Day 1\t4\t5');
+        console.log('this is a backslash symbol(\\)');
+        console.log('this is symbol\"hello\"');
+
+        //---------------Template literals(Template Strings)or string interpolation method----//
+        //---let see the example
+        let a= 3;
+        let b = 4;
+        console.log(`the sum of ${a} with ${b} is ${a+b}`);
+        console.log(`${a}is greater than ${b}:${a>b}`);
+
+        //---------String Methods----------------//
+        //No.1- length : the string length method returns the number of characters in a string including empty space.for example:
+        let js = "javascript";
+        console.log(js.length);
+        //No.2- Accessing characters in a string: we can access each character in a string using its index.for example:
+        let string= 'javascript';
+        console.log(string[1]);
+        //No.3- toLowerCase():this method change the string to lowercase letters. foe example:
+        let str= 'apnacollege';
+        console.log(str.toLowerCase());
+        //same as it is we can use uppercase():
+        console.log(str.toUpperCase());
+        //No.4- substr(): it takes two arguments(the starting index and the number of characters to slice)For example:
+        console.log(str.substr(2,6));
+        //No.5- substring(): it  takes two arguments(the starting index and the stopping index but it does notinclude the character at the stopping index.)for example:
+        console.log(string.substring(2,8));
+        //No.6- split():the split method splits a string at a specified place. For example:
+        console.log(str.split('a'));
+        let nama= "it, is, a, good, day";
+        console.log(nama.split(', '));
+        //No.7- trim():removes trailing space in the beginning or the end of a string. for example:
+        let ostr = 'there is some space';
+        console.log(ostr.trim());
+        //No.8- includes(): it takes a substring argument and it checks if ubstring argument exists in the string.it returns boolean (true or false).for example:
+        console.log(ostr.includes('pace'));
+        //No.9- replace():it takes as a parameter (the old substringand a new substring )and replace the old with new.for example:
+        console.log(ostr.replace('pace', 'java'));
+        //No.10- CharAt(): takes index and i returns the value at that index.//For example
+        console.log(ostr.charAt(1));
+        //No.11:- IndexOf(): Takes a substring an d if the substring exists in a string it returns the first position of the substring and if does not exist it returns -1;For example
+        console.log(ostr.indexOf("om"))
+        //No.12- lastIndexOf(): its working is somthing like indexOf but it returns the last index of substring. For example.
+        console.log(ostr.lastIndexOf("me"))
+        //No.13- concat(): it takes many substrings and joins them. For example:
+        console.log(ostr.concat("  by the way"))
+        //No.14- startsWith(): it takes a substring as an aurgument and it checks if the string start with that specified substring . it returns a boolean (true or false). And the endWith is similar to startsWith  but it will check for the end.
+        console.log(ostr.startsWith("th"));
+        //No.15- it takes a substring as an argumrent and returns the index of the first match for examle:
+        console.log(ostr.search("ome"));
+        //No.16- match(): it takes a substring and regular expression patterns as an argument it returns array if there is match if not it returns null . lets us see how a regular expression patterns looks like.it starts with "/" and ends with"/" .  //we wil see regular expressions later//  For example:
+        console.log(ostr.match("there"));
+        //No.17- repeat(): it takes a number as argument and it returns the repeated version of the string. 
+        console.log(ostr.repeat(3))
+
+        //----------------Checking Data types and casting--------------//
+        //---------Checking data types---------//
+        // to check the data type of any variable we use the typeof() method.
+        console.log(typeof ostr);
+        //---------Changing Data Type (casting) ---------//
+        //---casting:converting one data type tp another data type . we use parseInt() , parseFloat() , Number() , +sign , str() when we do arithmetic operations string numbers should be first converted to integer or float if not it returns an error.
+        let n = 6.5;
+        console.log ( parseInt(n));
+        console.log(Number(n));
+        console.log(+n);
+        </script>
+</head>
+<body>
+    
+</body>
+</html>

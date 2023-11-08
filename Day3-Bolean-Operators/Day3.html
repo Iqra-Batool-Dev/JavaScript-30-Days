@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        ///''''''''''''''''Booleans'''''''''''''''///
+        /*Boolean data type returns one of the two values : true or false.
+        ▶ Truthy Values:
+            ✔ All the number(positive and negative )are truthy except zero.
+            ✔ All strings are truthy except empty string("").
+            ✔ The boolean true.
+        ▶ Falsy Values:
+            ✔ 0        ✔ undefined            ✔ '',"",``, empty string
+            ✔ 0n       ✔ NaN
+            ✔ null     ✔ the boolean false
+        
+        */
+        let bar= "2";
+        let bar2="3";
+        console.log(bar**bar2);
+        console.log(bar--);
+        console.log(bar);
+        console.log((bar>bar2)? true:false);
+        
+
+        ///''''''''''''''Date Time Object'''''''''''''''//
+        //new Date() is called time object it is used to show current date date an time etc . which is by default shows every thing about time ..we can use different get methods with this object. like shown below:....
+        const now =new Date();
+        console.log(now);
+        // Getting full year
+            console.log(now.getFullYear());
+        //Getting month
+            console.log(now.getMonth());
+        //Getting date
+            console.log(now.getDate());
+        //Getting day
+            console.log(now.getDay());
+        //Getting hours
+            console.log(now.getHours());
+        //Getting minutes
+            console.log(now.getMinutes());
+        //Getting seconds
+            console.log(now.getSeconds());
+        //Getting time
+            console.log(now.getTime())
+    </script>
+</body>
+</html>

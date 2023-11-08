@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // Q No.01- Create an Animal class. The class will have name, age, color, legs properties and create different methods
+        class animal {
+            constructor(name, age, color, legs){
+                this.name= name
+                this.age = age
+                this.color = color 
+                this.legs = legs
+            }
+
+            fullInfo (){
+                const info = `${name} is my pet . it has ${legs} legs. It's color is ${color}`
+                return info
+            }
+            get getColor(){
+                return this.color
+            }
+        }
+
+        const myPet = new animal("Kitti" , 4, "white", 4)
+        console.log(myPet)
+        console.log(myPet.getColor)
+
+        // inherit dog class 
+
+        class dog  extends animal{
+
+        }
+        const dog1 = new dog ("labrador" , 5, "brown" , 4)
+        console.log(dog1)
+
+        // Q No.02- create cat child class from animal
+
+        class cat extends animal{
+
+        }
+        const cat1 = new cat ("cato" , 2, "skin", 4)
+        console.log(cat1)
+    </script>
+</body>
+</html>

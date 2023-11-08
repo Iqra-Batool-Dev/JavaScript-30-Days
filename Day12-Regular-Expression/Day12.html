@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //-------------------------Regular Expression--------------------------//
+
+        // creating a regular expression using regExp constructor //
+        // without using flag parameter
+        let pattern = 'love'
+        let regEx = new RegExp(pattern)
+
+        // Declaring regular expression with global flag and case insensitive flag.
+        let pattern2 = 'love' 
+        let flag = 'gi'
+        let regEx2 = new RegExp(pattern , flag)
+
+        // Writing the pattern and the flag inside the RegExp constructor
+        let regEx3 = new RegExp('love' , 'gi')
+
+        // Creating a pattern without  using RegExp constructor
+
+        let regEx4 = /love/gi
+
+        let regExp5 = /pizza/gi
+
+        //---------------RegExp object methods ---------------//
+        // here are some RegExp methods 
+        // test() : it tests if a pattern matches in a string . it return true or false
+
+        const str = 'i love pakistan'
+        let pattern3 = /love/i
+        const result = pattern3.test(str)
+        console.log(result)
+
+        // match() : Returns an array containing all of the matches, including capturing groups, or null if no match is found. If we do not use a global flag, match() returns an array containing the pattern, index, input and group.
+        const string = 'i go to my college'
+        const pattrn = /my/
+        const rslt = string.match(pattrn)
+        console.log(rslt)
+
+        // with global flag
+        const string2 = 'i go to my college for my work with my home'
+        const pattrn2 = /my/g
+        const rslt2 = string2.match(pattrn2)
+        console.log(rslt2)
+
+        // search(): Tests for a match in a string. It returns the index of the match, or -1 if the search fails.
+
+        const str2 = 'i go to my college for my work with my home'
+        const ptr = /college/g
+        const result4 = str2.search(ptr)
+        console.log(result4)
+
+        // replace() : Executes a search for a match in a string, and replaces the matched substring with a replacement substring.
+        // if we not use global flag it will work only with first match
+        const txt = 'Python is the most beautiful language that a human being has ever created.\
+        I recommend python for a first programming language'
+        const wordReplace = txt.replace(/Python|python/, 'javascript')
+        console.log(wordReplace)
+
+        //but if we use global flag it will work with whole text
+        const txt2 = 'Python is the most beautiful language that a human being has ever created.\
+        I recommend python for a first programming language'
+        const wordReplace2 = txt2.replace(/Python|python/g, 'javascript')
+        console.log(wordReplace2)
+
+        // ----------------------let's use some meta characters---------------------//
+
+        // Square Bracket []
+        const text = 'Apple and banana are fruits. An old cliche says an apple a day keeps the  doctor way has been replaced by a banana a day keeps the doctor far far away.' 
+        const match = text.match(/[Aa]pple/g) 
+        console.log(match)
+
+        // escape character(\) in RegExp
+        const para = 'This regular expression example was made in January 12,  2020.'
+        const  patt = /\d/g
+        const match2 = para.match(patt)
+        console.log(match2)
+
+        // one or more time (+) in RegExp
+        const para2 = 'This regular expression example was made in January 12,  2020.'
+        const  patt2 = /\d+/g
+        const match3 = para2.match(patt2)
+        console.log(match3)
+
+        // Period (.) 
+
+        const match4 = para2.match(/[a]./g)
+        console.log(match4)
+
+        const match5 = para2.match(/[a].+/g)
+        console.log(match5)
+
+        // Zero or more time (*)
+
+        const match6= para2.match(/[a].*/g)
+        console.log(match6)
+
+        // Zero or one time (?)
+
+        const match7= para2.match(/[a]-?/g)
+        console.log(match7)
+
+        // quantifiers in RegExp
+        const txt1 = 'This regular  expression example was made in December 6,  2019.'
+        const pattern7 = /\b\w{4}\b/g  //  exactly four character words
+        const matches = txt1.match(pattern7)
+        console.log(matches)  
+
+        // cart ^ : it mean start with
+
+        const txt3 = 'This regular expression example was made in December 6,  2019.'
+        const patrn = /^This/g
+        const matches2 = txt3.match(patrn)
+        console.log(matches2)
+
+        // Exact Match
+
+        let name= 'Asebneh'
+        const patn = /^[A-Z][a-z]{3,12}$/
+        const matches5 = patn.test(name)
+        console.log(matches5)
+
+        // 
+
+
+
+
+
+
+
+        
+    </script>
+</body>
+</html>

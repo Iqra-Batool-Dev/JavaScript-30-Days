@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //Q No.1- Iterate 0 to 10 using for loop.
+      for (var i = 0; i <= 10; i++) {
+        console.log(i);
+      }
+
+      //Q No.2- iterate 10 to 0 using for loop .
+      for (var i = 10; i >= 0; i--) {
+        console.log(i);
+      }
+
+      // Q NO.3- ITERATE 0 TO N USING FOR LOOp;
+      var n = 5;
+      for (var i = 0; i <= n; i++) {
+        console.log(i);
+      }
+
+      //Q No.4- write a loop to make the fo;;owing pattern :
+      /*  # 
+        ## 
+        ### 
+        ####
+        ##### 
+        ###### 
+        ####### */
+      for (var i = 0; i <= 7; i++) {
+        for (var j = 0; j < i; j++) {
+          document.write("#");
+        }
+        document.write("<br>");
+      }
+
+      //Q No.5- Use loop to print the multiplication of numbers from 0 to 10.
+      for (var i = 0; i <= 10; i++) {
+        console.log(`${i}x${i}=${i * i}`);
+      }
+
+      //Q No.6- using loop print the following pattern for the numbers 0 to 10 : i   i^2   i^3
+      for (var i = 0; i <= 10; i++) {
+        let square = i * i;
+        let cube = i * i * i;
+        console.log(`${i}    ${square}    ${cube}`);
+      }
+
+      //Q No.7- use for loop to iterate from 0 to 100 and print only even numbers.
+      for (var i = 0; i <= 100; i++) {
+        if (i % 2 !== 0) {
+          continue;
+        }
+        console.log(i);
+      }
+
+      //Q No.8- use for loop to iterate from 0 to 100 and print only odd numbers.
+      for (var i = 0; i <= 100; i++) {
+        if (i % 2 == 0) {
+          continue;
+        }
+        console.log(i);
+      }
+
+      //Q No.9-  use for loop to iterate from 0 to 100 and print only prime numbers.
+      // for(var i=0; i<=100; i++){
+      // if(i%i !== 0){
+      //     continue;
+      // }
+      // console.log(i);
+      // }
+
+      //Q No.10- use for loop to iterate from 0 to 100 and print sum of all numbers .
+      var sum = 0;
+      for (var i = 0; i <= 100; i++) {
+        sum += i;
+      }
+      console.log(sum);
+
+      //Q No.11-  use for loop to iterate from 0 to 100 and print sum of all even numbers and all odd numbers .
+      let sum2 = 0;
+      for (var i = 0; i <= 100; i++) {
+        if (i % 2 !== 0) {
+          continue;
+        }
+        sum2 += i;
+      }
+      // console.log(sum2);
+
+      let sum3 = 0;
+      for (var i = 0; i <= 100; i++) {
+        if (i % 2 == 0) {
+          continue;
+        }
+        sum3 += i;
+      }
+      // console.log(sum3);
+      var sumArray = [sum2, sum3];
+      console.log(sumArray); //result for Q No.12
+
+      // Q No.13- Develop a script which generate array of 5 random numbers.
+      const array = [];
+      for (var i = 0; i < 5; i++) {
+        let code = Math.floor(Math.random() * 11);
+        array.push(code);
+      }
+      console.log(array);
+
+      //Q No.14- Develop a small script which generate array of 5 random numbers and the numbers must be unique;
+      const array2 = [];
+      for (var i = 0; i < 5; i++) {
+        let code = Math.floor(Math.random() * 100);
+        if (array2.indexOf(code) == -1) {
+          array2.push(code);
+        }
+      }
+      console.log(array2);
+
+      //Q No.15- Develop a small script which generate a six characters random id
+      const charArray =
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+      let result = "";
+      const lengthOfArray = charArray.length;
+      for (var i = 0; i <= 5; i++) {
+        result += charArray.charAt(Math.floor(Math.random() * lengthOfArray));
+      }
+      console.log(result);
+
+      //_____________LEVEL 02________________
+
+      //Q No.1- Develop a small script which generate any number of  characters random id:
+      const generate = (n) => {
+        const characters =
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        let result2 = "";
+        const lengthOfString = characters.length;
+        for (var i = 0; i <= n; i++) {
+          result += characters.charAt(
+            Math.floor(Math.random() * lengthOfString)
+          );
+        }
+        return result;
+      };
+      var length = 25;
+      console.log(generate(length));
+
+      //Q No.2- write a script which generate a random hexadecimal number.
+
+      const charArray2 = "abcdefghijklmnopqrstuvwxyz0123456789";
+      let result3 = "";
+      const lengthOfArray2 = charArray2.length;
+      for (var i = 0; i < 6; i++) {
+        result3 += charArray2.charAt(
+          Math.floor(Math.random() * lengthOfArray2)
+        );
+      }
+      console.log(`#${result3}`);
+
+      //Q No.3- write a script which generate a random  rgb color number;
+      const rgbColor = () => {
+        let r = Math.floor(Math.random() * 256);
+        let g = Math.floor(Math.random() * 256);
+        let b = Math.floor(Math.random() * 256);
+        return "rgb(" + r + "," + g + "," + b + ")";
+      };
+      console.log(rgbColor());
+
+      //Q No.4- Using above countries array , create the following new array.
+      const countries = [
+        "Albania",
+        "Bolivia",
+        "Canada",
+        "Denmark",
+        "Ethiopia",
+        "Finland",
+        "Germany",
+        "Hungary",
+        "Ireland",
+        "Japan",
+        "Kenya",
+      ];
+      const newNew = [];
+      for (const elem of countries) {
+        const capita = elem.toUpperCase();
+        newNew.push(capita);
+      }
+      console.log(newNew);
+
+      //No.5- Using the above countries array ' create an array for countries' length.
+      const new2 = [];
+      for (const item of countries) {
+        const lnth = item.length;
+        new2.push(lnth);
+      }
+      console.log(new2);
+
+      //No.6- use the countries array  to create the following array of arrays:
+
+      const large = [];
+      const lengthOf = countries.length;
+      var i = 0;
+      while (i < lengthOf) {
+        large.push([
+          countries[i],
+          countries[i].slice(0, 3).toUpperCase(),
+          countries[i].length,
+        ]);
+        i++;
+      }
+      console.log(large);
+
+      //No.7- in above array check if there are countries containing word 'land' and print it as array , if there is no country containing 'land' print 'All countries are without land'.
+      const arr = [];
+      for (const element of countries) {
+        if (element.includes("land")) {
+          arr.push(element);
+        }
+      }
+      if (arr.length > 0) {
+        console.log(arr);
+      } else {
+        console.log("All countries are without land");
+      }
+
+      //Q No.8- in th above array
+      const arr2 = [];
+      for (const element2 of countries) {
+        if (element2.includes("ia")) {
+          arr2.push(element2);
+        }
+      }
+      if (arr2.length > 0) {
+        console.log(arr2);
+      } else {
+        console.log("these countries are end without ia");
+      }
+
+      //Q No.9- Using the above countries array , find the country containing the biggest number of characters .
+      let one = "a";
+      for (const element3 of countries) {
+        if (element3.length > one.length) {
+          one = element3;
+        }
+      }
+      console.log(one);
+
+      // Q No.10- find the country containing only 5 characters.
+      const arr4 = [];
+      for (const element4 of countries) {
+        if (element4.length == 5) {
+          arr4.push(element4);
+        }
+      }
+      console.log(arr4);
+
+      //Q No.11- find the longest word in the webTech array.
+
+      const webTech = [
+        "HTML",
+        "CSS",
+        "Js",
+        "React",
+        "Redux",
+        "Node",
+        "Express",
+        "MongoDB",
+      ];
+      let two = "a";
+      for (const element4 of webTech) {
+        if (element4.length > two.length) {
+          two = element4;
+        }
+      }
+      console.log(two);
+
+      //Q No.12- using the webTech array make the following array of arrays.
+      const large2 = [];
+      for (const element5 of webTech) {
+        large2.push([element5, element5.length]);
+      }
+      console.log(large2);
+
+      //Q No.13- An application created using MongoDB, Express, React and Node is called a MERN stack app. Create the acronym MERN by using the array mernStack.
+      const stack = ["MongoDB", "express", "react", "node"];
+      const arrays = [];
+      for (const pro of stack) {
+        arrays.push(pro.slice(0, 1).toUpperCase());
+      }
+      console.log(arrays.toString());
+
+      //Q No.14- Iterate through the array, ["HTML", "CSS", "JS", "React", "Redux", "Node", "Express", "MongoDB"] using a for loop or for of loop and print out the items.
+      for (const techs of webTech) {
+        console.log(techs);
+      }
+
+      //Q No.15- This is a fruit array , ['banana', 'orange', 'mango', 'lemon'] reverse the order using loop without using a reverse method.
+      const fruits = ["banana", "orange", "mango", "lemon"];
+      const newFruits = [];
+      for (const fruit of fruits) {
+        newFruits.unshift(fruit);
+      }
+      console.log(newFruits);
+
+      //Q No.16- Print all the elements of array as shown below.
+      //   const fullStack = [
+      //     ['HTML', 'CSS', 'JS', 'React'],
+      //     ['Node', 'Express', 'MongoDB']
+      //   ]
+      const frontEnd = ["HTML", "CSS", "JS", "React"];
+      const backEnd = ["Node", "Express", "MongoDB"];
+      const fullStack = [];
+      fullStack.push(frontEnd, backEnd);
+      console.log(fullStack);
+
+      //_____________________Level 03___________________
+
+      //Q No.1- Copy countries array(Avoid mutation).
+      const new3 = [...countries];
+      console.log(new3);
+      //or
+      const new4 = countries.slice(0, countries.length);
+      console.log(new4);
+      //or
+      const new5 = [];
+      for (const element6 of countries) {
+        new5.push(element6);
+      }
+      console.log(new5);
+
+      //Q No.2- Arrays are mutable. Create a copy of array which does not modify the original. Sort the copied array and store in a variable sortedCountries.
+      const new6 = [...countries];
+      const sortedCountries = countries.sort();
+      console.log(sortedCountries);
+
+      //Q No.3- Extract all the countries contain the word 'land' from the countries array and print it as array.
+      const countries2 = [
+        "Afghanistan",
+        "Albania",
+        "Algeria",
+        "Andorra",
+        "Angola",
+        "Antigua and Barbuda",
+        "Argentina",
+        "Armenia",
+        "Australia",
+        "Austria",
+        "Azerbaijan",
+        "Bahamas",
+        "Bahrain",
+        "Bangladesh",
+        "Barbados",
+        "Belarus",
+        "Belgium",
+        "Belize",
+        "Benin",
+        "Bhutan",
+        "Bolivia",
+        "Bosnia and Herzegovina",
+        "Botswana",
+        "Brazil",
+        "Brunei",
+        "Bulgaria",
+        "Burkina Faso",
+        "Burundi",
+        "Cambodia",
+        "Cameroon",
+        "Canada",
+        "Cape Verde",
+        "Central African Republic",
+        "Chad",
+        "Chile",
+        "China",
+        "Colombi",
+        "Comoros",
+        "Congo (Brazzaville)",
+        "Congo",
+        "Costa Rica",
+        "Cote d'Ivoire",
+        "Croatia",
+        "Cuba",
+        "Cyprus",
+        "Czech Republic",
+        "Denmark",
+        "Djibouti",
+        "Dominica",
+        "Dominican Republic",
+        "East Timor (Timor Timur)",
+        "Ecuador",
+        "Egypt",
+        "El Salvador",
+        "Equatorial Guinea",
+        "Eritrea",
+        "Estonia",
+        "Ethiopia",
+        "Fiji",
+        "Finland",
+        "France",
+        "Gabon",
+        "Gambia, The",
+        "Georgia",
+        "Germany",
+        "Ghana",
+        "Greece",
+        "Grenada",
+        "Guatemala",
+        "Guinea",
+        "Guinea-Bissau",
+        "Guyana",
+        "Haiti",
+        "Honduras",
+        "Hungary",
+        "Iceland",
+        "India",
+        "Indonesia",
+        "Iran",
+        "Iraq",
+        "Ireland",
+        "Israel",
+        "Italy",
+        "Jamaica",
+        "Japan",
+        "Jordan",
+        "Kazakhstan",
+        "Kenya",
+        "Kiribati",
+        "Korea, North",
+        "Korea, South",
+        "Kuwait",
+        "Kyrgyzstan",
+        "Laos",
+        "Latvia",
+        "Lebanon",
+        "Lesotho",
+        "Liberia",
+        "Libya",
+        "Liechtenstein",
+        "Lithuania",
+        "Luxembourg",
+        "Macedonia",
+        "Madagascar",
+        "Malawi",
+        "Malaysia",
+        "Maldives",
+        "Mali",
+        "Malta",
+        "Marshall Islands",
+        "Mauritania",
+        "Mauritius",
+        "Mexico",
+        "Micronesia",
+        "Moldova",
+        "Monaco",
+        "Mongolia",
+        "Morocco",
+        "Mozambique",
+        "Myanmar",
+        "Namibia",
+        "Nauru",
+        "Nepal",
+        "Netherlands",
+        "New Zealand",
+        "Nicaragua",
+        "Niger",
+        "Nigeria",
+        "Norway",
+        "Oman",
+        "Pakistan",
+        "Palau",
+        "Panama",
+        "Papua New Guinea",
+        "Paraguay",
+        "Peru",
+        "Philippines",
+        "Poland",
+        "Portugal",
+        "Qatar",
+        "Romania",
+        "Russia",
+        "Rwanda",
+        "Saint Kitts and Nevis",
+        "Saint Lucia",
+        "Saint Vincent",
+        "Samoa",
+        "San Marino",
+        "Sao Tome and Principe",
+        "Saudi Arabia",
+        "Senegal",
+        "Serbia and Montenegro",
+        "Seychelles",
+        "Sierra Leone",
+        "Singapore",
+        "Slovakia",
+        "Slovenia",
+        "Solomon Islands",
+        "Somalia",
+        "South Africa",
+        "Spain",
+        "Sri Lanka",
+        "Sudan",
+        "Suriname",
+        "Swaziland",
+        "Sweden",
+        "Switzerland",
+        "Syria",
+        "Taiwan",
+        "Tajikistan",
+        "Tanzania",
+        "Thailand",
+        "Togo",
+        "Tonga",
+        "Trinidad and Tobago",
+        "Tunisia",
+        "Turkey",
+        "Turkmenistan",
+        "Tuvalu",
+        "Uganda",
+        "Ukraine",
+        "United Arab Emirates",
+        "United Kingdom",
+        "United States",
+        "Uruguay",
+        "Uzbekistan",
+        "Vanuatu",
+        "Vatican City",
+        "Venezuela",
+        "Vietnam",
+        "Yemen",
+        "Zambia",
+        "Zimbabwe",
+    ];
+    const land =[]
+    for(const country of countries2){
+        if(country.includes('land')){
+            land.push(country);
+        }
+    }
+    console.log(land);
+
+    //Q No.5- Find the country containing the hightest number of characters in the countries array.
+    let big='';
+    for(const country of countries2){
+        if(country.length > big.length){
+            big=country;
+        }
+    }
+    console.log(big);
+
+    //Q No.6- Extract all the countries containing only four characters from the countries array and print it as array.
+    const new7 =[];
+    for(const country of countries2){
+        if(country.length==4){
+            new7.push(country);
+        }
+    }
+    console.log(new7);
+
+    //Q No.7- Extract all the countries containing two or more words from the countries array and print it as array.
+    const new8=[];
+    for(const country of countries2){
+        if(country.includes(' ')){
+            new8.push(country)
+        }
+    }
+    console.log(new8);
+
+    //Q No.8- Reverse the countries array and capitalize each country and stored it as an array.
+  const capital=[]
+    console.log(countries2.reverse());
+    for(const country of countries2){
+        capital.push(country.toUpperCase());
+    }
+    console.log(capital);
+
+
+    //----------------------🎉THE END🎉----------------------------//
+    </script>
+  </body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Classes</title>
+</head>
+<body>
+    <script>
+        // class definition
+        class person{
+            // code to be here
+        }
+        
+        // class instantiation
+
+        const human = new person( )
+        console.log(human)
+
+        // class constructor 
+        class student {
+            constructor (rollNumber , name){
+                // console.log(this)
+                this.rollNumber = rollNumber
+                this.name = name
+            }
+        }
+        const student1 = new student(102 , 'iqra')
+        const student2 =new student(103 , 'batool')
+        console.log(student1)
+        console.log(student2)
+
+        // Default Values with constructor 
+
+        class employees {
+            constructor(name = 'Ali' , age= 25 , salary = 25000 ){
+                this.name = name
+                this.age = age
+                this.salary = salary
+            }
+        }
+        const employee1 = new employees()
+        const employee2 = new employees('Ahmad' , 30 , 20000)
+        console.log(employee1)
+        console.log(employee2)
+
+        // Class methods
+
+        class sister {
+            constructor(firstName, lastName, age, hair){
+                this.firstName = firstName 
+                this.lastName = lastName
+                this.age = age
+                this.hair = hair
+            }
+
+            getFullName () {
+                let fullName = this.firstName + ' ' + this.lastName
+                return fullName
+            }
+            //using getter
+
+            get getlastName(){
+                return this.lastName
+            }
+
+            // using setter
+
+            set setLastName (lname){
+                this.lastName = lname
+            }
+        }
+
+        const fizza = new sister('Fizza' , 'Liaqat' , 8 , 'short')
+        const ayesha = new sister('Ayesha' , 'Noor' , 11, 'long')
+        console.log(fizza.getFullName())
+        console.log(ayesha.getFullName())
+
+        // Properties with initial value 
+
+        console.log(ayesha.age)
+
+        console.log(fizza.getlastName) //getter output
+
+        ayesha.setLastName = "Fatima"
+        console.log(ayesha.lastName) // setter output
+
+        // Static Methods 
+
+        class resume {
+            constructor( name, skill, degree){
+                this.name
+                this.skill
+                this.degree
+            }
+            static favoriteSkill() {
+                const skills = ['HTML', 'CSS', 'JS', 'React', 'Python', 'Node']
+                const index = Math.floor(Math.random() * skills.length)
+                return skills[index]
+            }
+        }
+        console.log(resume.favoriteSkill())
+
+        // class inheritance
+
+        class child extends employees{
+            saySomething (){
+                return("I am a child of person class")
+            }
+        }
+
+        const c1= new child ('Ahmad' , 30 , 20000)
+        console.log(c1.saySomething())
+
+    
+        
+        // Overriding 
+
+        class product {
+            constructor(pName , pId, price){
+                console.log(`its color is ${color}`)
+                this.ProductName = pName
+                this.ProductId = pId
+                this.price = price
+            }
+            doublePrice (){
+                return (this.price*2)     
+            }
+        }
+
+        class chair extends product{
+            constructor(pName , pId, price , color){
+                super(pName , pId, price)
+                this.color = color
+            }
+        }
+
+        const furniture = new chair ('chair', 102, 2000, 'brown')
+
+    </script>
+</body>
+</html>

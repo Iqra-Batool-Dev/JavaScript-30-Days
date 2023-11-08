@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="country-data.js"></script>
+</head>
+<body>
+    <script>
+        // --------------------- LEVEL 01---------------------------
+        const countries = ['Finland', 'Sweden', 'Denmark', 'Norway', 'Iceland']
+        const names = ['Asabeneh', 'Mathias', 'Elias', 'Brook']
+        const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        const products = [
+            { product: 'banana', price: 3 },
+            { product: 'mango', price: 6 },
+            { product: 'potato', price: ' ' },
+            { product: 'avocado', price: 8 },
+            { product: 'coffee', price: 10 },
+            { product: 'tea', price: ' ' },
+        ]
+    //Q No.1- Use forEach to console.log each country in the countries array.
+        countries.forEach((country)=>{
+            console.log(country)
+        })
+        
+    //Q No.2- Use forEach to console.log each name in the names array.
+        names.forEach((name)=>{
+            console.log(name)
+        })
+    
+    // Q No.3- Use forEach to console.log each number in the numbers array.
+        numbers.forEach((number)=>{
+            console.log(number)
+        })
+
+    // Q No.4- Use map to create a new array by changing each country to uppercase in the countries array.
+        const newCountry= countries.map((country)=>{
+            return country.toUpperCase()
+        })
+        console.log(newCountry)
+
+    // Q No.5- Use map to create an array of countries length from countries array.
+        const lengthOfCountries = countries.map((country)=>{
+            return country.length
+        })
+        console.log(lengthOfCountries)
+        
+    // Q No.6- Use map to create a new array by changing each number to square in the numbers array
+        const squareOfNumbers = numbers.map((number)=>{
+            return number*number
+        })
+        console.log(squareOfNumbers)
+    // Q No.7- Use map to change to each name to uppercase in the names array
+        const newName = names.map((name)=>{
+            return name.toUpperCase()
+        })
+        console.log(newName)
+
+    // Q No.8- Use map to map the products array to its corresponding prices.
+        const priceOfProducts = products.map((obj)=>{
+            return (obj.price)
+        })
+        console.log(priceOfProducts)
+
+    // Q No.9- Use filter to filter out countries containing land.
+        const  countriesWithLand = countries.filter((country) =>country.includes('land'))
+        console.log(countriesWithLand)
+
+    // Q No.10- Use filter to filter out countries having six character.
+        const countriesOfSixChar =  countries.filter((country)=> country.length === 6)
+        console.log(countriesOfSixChar)
+
+    // Q No.11- Use filter to filter out countries containing six letters and more in the country array.
+        const countriesOfMoreThan6 =  countries.filter((country)=> country.length >= 6)
+        console.log(countriesOfMoreThan6)
+
+    // Q No.12- Use filter to filter out country start with 'E'.
+        const countryStartWithE = countries.filter((country)=> country.startsWith('E'))
+        console.log(countryStartWithE)
+    // Q No.13- Use filter to filter out only prices with values.
+        // const entries= Object.entries(products)
+        // const pricesWithValue = products.filter((obj.price) => {return obj.entries(obj)})
+        // console.log(pricesWithValue)
+
+    // Q No.14- Declare a function called getStringLists which takes an array as a parameter and then returns an array only with string items.
+        const multiple = [1, 'iqra' , 't', 16, 100, 'Hd']
+        const onlyStrings = multiple.filter((element)=>{
+        return typeof(element) === "string"
+        })
+        console.log(onlyStrings)
+
+    // Q No.15- Use reduce to sum all the numbers in the numbers array.
+        const sumOfNumbers = numbers.reduce((acc , crr)=>{
+        return acc+crr
+        },0)
+        console.log(sumOfNumbers)
+
+    // Q no.16- Use reduce to concatenate all the countries and to produce this sentence: Estonia, Finland, Sweden, Denmark, Norway, and IceLand are north European countries.
+        const sentence = countries.reduce((acc , country , index)=>{
+            if(index== countries.length-1){
+                return acc + ", and " + country 
+            }
+            else{
+                return acc + ", " +country
+            }
+        })
+        console.log(`${sentence} are all north countries `)
+
+    // Q No.17- Use some to check if some names' length greater than seven in names array.
+        const lengthGreater7= names.some((name)=>{
+            name.length > 7
+        })
+        console.log(lengthGreater7)
+
+    // Q No.18- Use every to check if all the countries contain the word land.
+        const checkLand = countries.every((country)=>{
+            country.includes("land")
+        })
+        console.log(checkLand)
+
+    // Q No.19- Use find to find the first country containing only six letters in the countries array.
+        const countryWithLengthSix = countries.find((country)=> country.length==6)
+        console.log(countryWithLengthSix)
+
+    // Q No.20- Use findIndex to find the position of the first country containing only six letters in the countries array.
+        const countryIndexWithLengthSix = countries.findIndex((country)=> country.length==6)
+        console.log(countryIndexWithLengthSix)
+    
+    // Q No.21- Use findIndex to find the position of Norway if it doesn't exist in the array you will get -1.
+        const findNorway = countries.findIndex((country)=>{
+            return country == "Norway"
+        })
+        console.log(findNorway)
+
+    // Q No.22- Use findIndex to find the position of Russia if it doesn't exist in the array you will get -1.
+    const findRussia = countries.findIndex((country)=>{
+            return country == "Russia"
+        })
+        console.log(findRussia)
+
+    // ------------------------LEVEL 02------------------------------//
+
+    // Q No.1- Find the total price of products by chaining two or more array iterators(eg. arr.map(callback).filter(callback).reduce(callback)).
+    const totalPrices = products.map(obj=> obj.price).filter(price=> typeof(price)=="number").reduce((acc , crr)=> acc + crr, 0)
+    console.log(totalPrices)
+        
+    // Q No.2- Find the sum of price of products using only reduce(callback)).
+    const sumOfPrices= products.reduce((sum , element)=> typeof(element.price)=="number"? sum + element.price : sum+0
+    , 0)
+    console.log(sumOfPrices)
+    
+    // Q No.3- Declare a function called categorizeCountries which returns an array of countries which have some common pattern(you find the countries array in this repository as countries.js(eg 'land', 'ia', 'island','stan')).
+    const countries2 = [
+        "Afghanistan",
+        "Albania",
+        "Algeria",
+        "Andorra",
+        "Angola",
+        "Antigua and Barbuda",
+        "Argentina",
+        "Armenia",
+        "Australia",
+        "Austria",
+        "Azerbaijan",
+        "Bahamas",
+        "Bahrain",
+        "Bangladesh",
+        "Barbados",
+        "Belarus",
+        "Belgium",
+        "Belize",
+        "Benin",
+        "Bhutan",
+        "Bolivia",
+        "Bosnia and Herzegovina",
+        "Botswana",
+        "Brazil",
+        "Brunei",
+        "Bulgaria",
+        "Burkina Faso",
+        "Burundi",
+        "Cambodia",
+        "Cameroon",
+        "Canada",
+        "Cape Verde",
+        "Central African Republic",
+        "Chad",
+        "Chile",
+        "China",
+        "Colombi",
+        "Comoros",
+        "Congo (Brazzaville)",
+        "Congo",
+        "Costa Rica",
+        "Cote d'Ivoire",
+        "Croatia",
+        "Cuba",
+        "Cyprus",
+        "Czech Republic",
+        "Denmark",
+        "Djibouti",
+        "Dominica",
+        "Dominican Republic",
+        "East Timor (Timor Timur)",
+        "Ecuador",
+        "Egypt",
+        "El Salvador",
+        "Equatorial Guinea",
+        "Eritrea",
+        "Estonia",
+        "Ethiopia",
+        "Fiji",
+        "Finland",
+        "France",
+        "Gabon",
+        "Gambia, The",
+        "Georgia",
+        "Germany",
+        "Ghana",
+        "Greece",
+        "Grenada",
+        "Guatemala",
+        "Guinea",
+        "Guinea-Bissau",
+        "Guyana",
+        "Haiti",
+        "Honduras",
+        "Hungary",
+        "Iceland",
+        "India",
+        "Indonesia",
+        "Iran",
+        "Iraq",
+        "Ireland",
+        "Israel",
+        "Italy",
+        "Jamaica",
+        "Japan",
+        "Jordan",
+        "Kazakhstan",
+        "Kenya",
+        "Kiribati",
+        "Korea, North",
+        "Korea, South",
+        "Kuwait",
+        "Kyrgyzstan",
+        "Laos",
+        "Latvia",
+        "Lebanon",
+        "Lesotho",
+        "Liberia",
+        "Libya",
+        "Liechtenstein",
+        "Lithuania",
+        "Luxembourg",
+        "Macedonia",
+        "Madagascar",
+        "Malawi",
+        "Malaysia",
+        "Maldives",
+        "Mali",
+        "Malta",
+        "Marshall Islands",
+        "Mauritania",
+        "Mauritius",
+        "Mexico",
+        "Micronesia",
+        "Moldova",
+        "Monaco",
+        "Mongolia",
+        "Morocco",
+        "Mozambique",
+        "Myanmar",
+        "Namibia",
+        "Nauru",
+        "Nepal",
+        "Netherlands",
+        "New Zealand",
+        "Nicaragua",
+        "Niger",
+        "Nigeria",
+        "Norway",
+        "Oman",
+        "Pakistan",
+        "Palau",
+        "Panama",
+        "Papua New Guinea",
+        "Paraguay",
+        "Peru",
+        "Philippines",
+        "Poland",
+        "Portugal",
+        "Qatar",
+        "Romania",
+        "Russia",
+        "Rwanda",
+        "Saint Kitts and Nevis",
+        "Saint Lucia",
+        "Saint Vincent",
+        "Samoa",
+        "San Marino",
+        "Sao Tome and Principe",
+        "Saudi Arabia",
+        "Senegal",
+        "Serbia and Montenegro",
+        "Seychelles",
+        "Sierra Leone",
+        "Singapore",
+        "Slovakia",
+        "Slovenia",
+        "Solomon Islands",
+        "Somalia",
+        "South Africa",
+        "Spain",
+        "Sri Lanka",
+        "Sudan",
+        "Suriname",
+        "Swaziland",
+        "Sweden",
+        "Switzerland",
+        "Syria",
+        "Taiwan",
+        "Tajikistan",
+        "Tanzania",
+        "Thailand",
+        "Togo",
+        "Tonga",
+        "Trinidad and Tobago",
+        "Tunisia",
+        "Turkey",
+        "Turkmenistan",
+        "Tuvalu",
+        "Uganda",
+        "Ukraine",
+        "United Arab Emirates",
+        "United Kingdom",
+        "United States",
+        "Uruguay",
+        "Uzbekistan",
+        "Vanuatu",
+        "Vatican City",
+        "Venezuela",
+        "Vietnam",
+        "Yemen",
+        "Zambia",
+        "Zimbabwe",
+    ];
+
+    function categorizeCountries(keyword) {
+        if(keyword == 'land'){
+        const countryWithLand = countries2.filter((country)=>country.includes('land'))
+        return countryWithLand
+        }
+        else if(keyword == 'ia'){
+        const countryWithIa = countries2.filter((country)=>country.includes('ia'))
+        return countryWithIa
+        }
+        else if(keyword == 'stan'){
+        const countryWithStan = countries2.filter((country)=>country.includes('stan'))
+        return countryWithStan
+        }
+        else if(keyword == 'island'){
+        const countryWithIsland = countries2.filter((country)=>country.includes('island'))
+        return countryWithIsland
+        }
+        else
+        return "countries does not exist"
+        
+    }
+    console.log(categorizeCountries( 'stan'))
+
+    // Q No.4- Create a function which return an array of objects, which is the letter and the number of times the letter use to start with a name of a country.
+    const letters = () =>{
+        const alphaChar = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+        let alphaIndexer =0 
+        const  finalArray = [];
+        while(alphaIndexer !== alphaChar.length){
+            const startWith = countries2.filter((country)=>country.startsWith(alphaChar[alphaIndexer]))
+            finalArray.push({'letter': alphaChar[alphaIndexer], 'count': startWith.length})
+            alphaIndexer++
+        }
+        return finalArray
+    }
+    console.log(letters())
+
+    //Q No. 5- Declare a getFirstTenCountries function and return an array of ten countries. Use different functional programming to work on the countries.js array
+    const getFirstTenCountries = (countries2)=>{
+        const ten =[]
+        const tenCountries = countries2.splice(0,10).forEach((country)=>{
+            ten.push(country)
+        })
+        return ten
+    }
+console.log(getFirstTenCountries(countries2))
+
+    // Q No.6- Declare a getLastTenCountries function which which returns the last ten countries in the countries array.
+    const getLastTenCountries = (countries2)=>{
+        const ten= []
+        const lastTenCountries = countries2.slice(-10).forEach((country)=>{
+            ten.push(country)
+        })
+        return ten
+    }
+    console.log(getLastTenCountries(countries2))
+
+    // Q No.7- Find out which letter is used many times as initial for a country name from the countries array (eg. Finland, Fiji, France etc)
+        const arrayOfLetters = letters()
+        const maxOccurrence = "" 
+        const mostOccurLetter = ""
+        for(const obj in arrayOfLetters){
+            if(obj.count > maxOccurrence){
+                maxOccurrence = obj.count
+                mostOccurLetter = obj.letter
+            }
+            
+        }
+        console.log(`The most occurring letter is ${mostOccurLetter} with count ${maxOccurrence}`)
+
+    
+    // --------------------------- LEVEL 03 -----------------------------
+
+    // Q No.1- Use the countries information, in the data folder. Sort countries by name, by capital, by population
+        // sort by name
+        countries3.sort((a,b)=>{
+            if(a.name < b.name) return -1
+            if(a.name > b.name) return 1
+            return 0;
+        })
+        console.log(countries3)
+
+        // sort by capital
+        countries3.sort((a,b)=>{
+            if(a.capital < b.capital) return -1
+            if(a.capital > b.capital) return 1
+            return 0;
+        })
+        console.log(countries3)
+
+        // sort by population
+        countries3.sort((a,b)=>{
+            if(a.population < b.population) return -1
+            if(a.population > b.population) return 1
+            return 0;
+        })
+        console.log(countries3)
+
+    // Q No.2- *** Find the 10 most spoken languages.
+    // const mostSpokenLanguage = (countries, number) => {
+    // const mostLanguage = {};
+    // countries.forEach((element) => {
+    //     const language = element.languages;
+    //     language.forEach((element) => {
+    //         if (element in mostLanguage) {
+    //             mostLanguage[element] += 1;
+    //         } else {
+    //             mostLanguage[element]  = 1;
+    //         }
+    //     });
+    // });
+    // return mostLanguage
+    
+    // }
+    // console.log(mostSpokenLanguage(countries3 , 5))
+
+
+    // Q No.4- Make a statistic function to find sum, min, max , range, count, mean, median, mode, var, std, fd///
+        const ages = [31, 26, 34, 37, 27, 26, 32, 32, 26, 27, 27, 24, 32, 33, 27, 25, 26, 38, 37, 31, 34, 24, 33, 29, 26]
+        const statistic= {
+            sum: function(){
+                let sum= 0
+                ages.forEach((element)=>{
+                    sum+= element
+                })
+                return sum
+            },
+
+            count: function(){
+                return ages.length
+            },
+
+            min: function(){
+                let minValue = ages[0]
+                ages.forEach((element)=>{
+                    if(element<minValue)
+                    minValue = element
+                })
+                return minValue
+            },
+
+            max: function(){
+                let maxValue = ages[0]
+                ages.forEach((element)=>{
+                    if(element > maxValue)
+                    maxValue = element
+                })
+                return maxValue
+            },
+
+            range: function(){
+                return this.max() - this.min()
+            },
+
+            mean: function(){
+                let average = this.sum() / this.count()
+                let roundOff = Math.floor(average) 
+                return roundOff
+            },
+
+            median: function(){
+                ages.sort((a, b)=> a-b)
+                let median = Math.floor(this.count() / 2)
+                return ages[median]
+            }
+        }
+
+        console.log(statistic.sum())
+        console.log(statistic.count())
+        console.log(statistic.range())
+        console.log(statistic.min())
+        console.log(statistic.max())
+        console.log(statistic.mean())
+        console.log(statistic.median())
+        
+
+
+
+
+
+
+    </script>
+</body>
+</html>

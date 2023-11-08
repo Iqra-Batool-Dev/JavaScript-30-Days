@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script  src="country-data.js"></script>
+</head>
+<body>
+    <script>
+        // Exercise level 01 ///////////
+
+        // Q No. 1- Display the countries array as a table
+        const countries = [
+        ['Finland', 'Helsinki'],
+        ['Sweden', 'Stockholm'],
+        ['Norway', 'Oslo']
+        ]
+        console.table(countries)
+
+        //Q no.2- Display the user object as a table
+        const user = {
+        name: 'Asabeneh',
+        title: 'Programmer',
+        country: 'Finland',
+        city: 'Helsinki',
+        age: 250
+        }
+        console.table(user)
+
+        // Q No.3- Use console.group() to group logs
+
+        console.group('Logs')
+        console.log('My name is Iqra')
+        console.log('I am a Software Engineer')
+        console.log('My age is 20')
+        console.groupEnd()
+
+        // level 02////
+
+        //Q no.1- 10 > 2 * 10 use console.assert()
+
+        console.assert(10>2*10 , 'this is not a true condition')
+
+        // Q No.2- Write a warning message using console.warn()
+        console.warn('you are not following the rules')
+
+        // Q No.3- Write an error message using console.error()
+        
+        console.error('ther is an error')
+    </script>
+</body>
+</html>

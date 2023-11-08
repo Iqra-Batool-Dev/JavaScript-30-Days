@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*A function can be declared and created in couple of ways :
+            > Declaration function
+            > Expression function
+            > Anonymous function
+            > Arrow function
+            */
+        
+            // regular Functions with unlimited parameters.
+        function smallNum(){
+            // const argu= Array.from(arguments);
+            console.log(arguments)
+        }
+        smallNum(1,2,3,4,5);
+
+        //Arrow functions with unlimited parameters.
+        const small= (...args)=>{
+            console.log(args)
+        }
+        small(3,5,6,8,90,1,2,3);
+        
+        //anonymous function
+        const anonymousFun= function(){
+            console.log('i am an anonymous function and my value is stored in anonymousFun')
+        }
+        anonymousFun();
+
+        //Expression function 
+        const square = function(n){
+            return n*n;
+        }
+        console.log(square(4));
+
+        // Self Invoking Functions  OR  IIFE (Immediately Invoked Function Expression)
+        //self invoking functions are the anonymous functions  which do not need to be called to return a value.
+        const invoke =( function(n){
+            return(n*n);
+        })(6)
+        console.log(invoke);
+
+        //OR ---------
+        const invoke2= (function(n){
+            console.log(n*n)
+        })(10)
+
+        //______________Arrow Function_______________
+
+        // const arrowFun= (n) =>{
+        //     return (n*n)
+        // }
+        // console.log(arrowFun(5))
+
+        //OR----
+        const arrowFun= n =>{
+            return (n*n);
+        }
+        console.log(arrowFun(7));
+
+        //if we hav ea one line in the code block , so it can be write as follows:
+        const square2 = n => n*n;
+        console.log(square2(9));
+
+        // here we will write a function to add the elements of array;
+        const addNumbers= arr =>{
+            let sum=0;
+            for(const element of arr){
+                sum+=element;
+            }
+            return sum;
+        }
+        const array1= [3, 2, 4, 5,6]
+        console.log(addNumbers(array1))
+
+        //_____Function with default parameter -----------
+        /* Both declarative function and arrow function can have  a default parameter.*/
+        //Examples:
+        function greetings(name='peter'){
+            let message = `Hello ${name}, welcome to 30 days of javascript.`
+            return message
+        }
+        console.log(greetings());
+        console.log(greetings("Hame"));
+
+        //OR-----
+        //with arrow function
+        const greetings2 = (name='peter') =>{
+            let message2 = `Hello ${name}, welcome to 30 days of javascript.`
+            return message2
+        }
+        console.log(greetings());
+        console.log(greetings("baten"));
+
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        a=8;
+        b=5;
+            // creating an empty object 
+            const person1= {}
+            //here is an other method to create object
+            const person3 = new Object()
+            person3.myName = 'Batool'; 
+            person3.age=40;
+            console.log(person3)
+
+            //creating object with values
+            const rectangle= {
+                width:20,
+                length:20
+            }
+            console.log(rectangle)
+
+            const person={
+                name:'iqra',
+                gender: 'female',
+                class:'bscs',
+                skills:['html', 'css', 'js'],
+                score:150,
+                'phone number':'+354216789'
+            }
+            console.log(person)
+            
+
+        // how to get values from an object.
+        // we can access values using two methods :
+        // 1- using . followed by key name if the key-name is a one word
+        // 2- using square bracket and a quote
+            console.log(person.name)
+            console.log(person['phone number'])
+
+        // ------ creating object method ------------- ////
+        const person2={
+                firstName:'iqra',
+                lastName: 'batool',
+                gender: 'female',
+                class:'bscs',
+                skills:['html', 'css', 'js'],
+                score:150,
+                'phone number':'+354216789' ,
+                getFullName: function(){
+                    return `${this.firstName} ${this.lastName}`
+                }
+            }
+            console.log(person2.getFullName())
+        
+        // --------- setting new key for an object -----------//
+            person2.nationality = 'pakistani'
+            person2.country ='pakistan'
+            person2.title= 'teacher'
+            person.skills.push('php')
+            person.skills.push('Saas')
+            person.isMarried=  true
+        
+            person2.getPersonInfo = function(){
+                let skillsWithoutLast = this.skills.splice(0,this.skills.length-1).join(', ')
+                let lastSkill= this.skills.splice(this.skills.splice(this.skills.length-1, 0))
+                let skills= `${skillsWithoutLast} and ${lastSkill}`
+                let fullName = this.getFullName()
+                let statement = `${fullName} is a ${this.title}. \nHe lives in ${this.country}.\nHe teaches ${skills}.`
+                return statement
+            }
+            console.log(person2.getPersonInfo())
+
+        //-------------Object Methods---------------//
+        // There are different methods to manipulate an object. Let us see some of the available methods.
+        // Object.assign: To copy an object without modifying the original object 
+            const copyPerson = Object.assign({}, person2)
+            console.log(copyPerson)
+        // Object.keys(): to get the keys or properties of an object as an array.
+            const keys = Object.keys(copyPerson);
+            console.log(keys)
+
+        // Object.value : to get the  values in an array.
+            const values = Object.values(copyPerson)
+            console.log(values)
+
+        // Object.entries : to get the keys and values in an array.
+            const entries = Object.entries(copyPerson)
+            console.log(entries)
+        
+        // hasOwnProperty() :  to check if a specific key or property exist in an object.
+        console.log(person2.hasOwnProperty('gender'))
+        
+
+    </script>
+</body>
+</html>

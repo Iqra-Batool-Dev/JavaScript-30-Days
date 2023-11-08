@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Higher Order Function</title>
+</head>
+<body><script>
+    /// Higher Order Functions are those which takes other functions as a parameter and return a function as value //////
+    /// callback : it is a function which can be passed as parameter to other function . 
+    //example:
+    //a callback function
+    const square = (n)=>{
+        return n ** 2
+    }
+    //a higher order function that takes a callback function
+    const qube =( square, n) =>{
+        return square(n) *n
+    }
+    console.log(qube(square, 3))
+
+    // Returning Function 
+    //higher order functions return a function as a value
+    const higherOrder = (n) =>{
+        const doSomething =(m) =>{
+            const doWhatEver =(t) =>{
+                return n+m+t
+            }
+            return doWhatEver
+        }
+        return doSomething
+    }
+    console.log(higherOrder(2)(3)(4))
+    
+    // Let us see were we use callback functions. for instance the forEach method uses callback.
+    const numbers =[1, 2, 3, 4, 5]
+    const sumArray = (arr) =>{
+        let sum=0;
+        const callback = function(elements){
+            sum+= elements
+        }
+        arr.forEach(callback)
+        return sum
+    }
+    console.log(sumArray(numbers))
+
+    // the above example can also be written as follows:
+
+    const numbers2 =[ 1, 2, 3, 4,5]
+    const sumArray2 = (arr) =>{
+        let sum=0
+        arr.forEach(function(elements){
+            sum+=elements
+        })
+        return sum
+    }
+    console.log(sumArray2(numbers2))
+
+    //---Setting Time----
+    //There are two types of functions used for setting time : 1- setInterval   2- setTimeout
+
+    // 1- >> setting  interval using a setInterval function::
+    // In JavaScript, we use setInterval higher order function to do some activity continuously with in some interval of time. The setInterval global method take a callback function and a duration as a parameter. The duration is in milliseconds and the callback will be always called in that interval of time.
+    //Syntax is as follows:-
+    // function callback(){
+    //     //code goes here
+    // }
+    // setInterval(callback, duration)
+
+    // Example:-
+    function sayHello(){
+        console.log("Hello")
+    }
+    setInterval(sayHello , 10000); //1000 ms= 1s
+
+    // 2- >> setting a time using a setTimeout
+    //In JavaScript, we use setTimeout higher order function to execute some action at some time in the future. The setTimeout global method take a callback function and a duration as a parameter. The duration is in milliseconds and the callback wait for that amount of time.
+    // syntax :-
+        // function callback(){
+        //     //code goes here
+        // }
+        // setTimeout(callback , duration)
+
+    // Example:- 
+    function sayHi(){
+        console.log("Hi")
+    }
+    setTimeout(sayHi, 9000)
+
+    //--------------Functional Programming ------------------
+    // in js advance version there are many built in methods instead of regular loops. these methods take callback function. there are many functions: forEach, map, filter, reduce, find, every, some, and  sort.
+
+    // 1- forEach()
+    // iterate an array elements. used only with arrays. it takes a callback function with element , index parameter and array itself but the index and array are optional. 
+    // syntax can be;
+    const arr =[]
+    arr.forEach(function(element, index, arr){
+        console.log(index, element, arr)
+    })
+    //Or can be write in arrow function
+    arr.forEach((element, index, arr) =>{
+        console.log(index, element, arr)
+    })
+    // or can be write in arrow function with explicit return
+    arr.forEach((element, index, arr)=> console.log(index, element, arr))
+
+    // Examples : 
+    const numbers3 = [1,2,3,4,5]
+    numbers3.forEach((num) => console.log(num))  
+    // next
+    let sum= 0
+    numbers3.forEach((num) =>{
+        sum+=num
+    })
+    console.log(sum) 
+    //next
+    const countries = ["Pak", "India", "USA", "UAE","finland" ]
+    countries.forEach((element) => console.log(element))
+
+    // 2- map()
+    //iterate the array elements and modify the array elements . it takes a callback function with elements, index, array parameter and return  a new array.
+    const modify = numbers3.map((element) =>{
+        return element
+    })
+    console.log(modify)
+    // or 
+    const squares = numbers3.map((element)=>element*element)
+    console.log(squares)
+
+    // 3- filter()
+    // Filter out items which full fill filtering conditions and return a new array.
+    // for example: filter countries containing land
+    const  countryLand = countries.filter((country) =>country.includes('land'))
+    console.log(countryLand)
+    // country have five letters
+    const fiveLetters = countries.filter((country) => country.length ===5)
+    console.log( fiveLetters)
+    // another example 
+    const scores = [
+    { name: 'Asabeneh', score: 95 },
+    { name: 'Lidiya', score: 98 },
+    { name: 'Mathias', score: 80 },
+    { name: 'Elias', score: 50 },
+    { name: 'Martha', score: 85 },
+    { name: 'John', score: 100 },
+    ]
+    const scoresGreaterEighty = scores.filter((obj) => obj.score > 80)
+    console.log(scoresGreaterEighty)
+
+    // 4- reduce()
+    // in JavaScript, the reduce() method is used to apply a function to each element of an array and reduce it to a single value. The reduce() method takes two parameters: a callback function and an optional initial value.The callback function takes four parameters: accumulator, currentValue, currentIndex, and array. The accumulator is the value returned from the previous invocation of the callback, or the initialValue if provided. The currentValue is the current element being processed, currentIndex is the index of the current element, and array is the array on which reduce() was called.The reduce() method executes the callback function once for each element in the array (excluding the initial value if provided), and the return value of the callback becomes the new value of the accumulator.
+
+    // syntax :- 
+        // arr.reduce((accumulator , currentValue)=>{      // current index and array parameter is optional here in callback function
+        //     return //some operations goes here
+        // } , initialValue)
+
+    // Example :-
+        const numbers4 = [1, 2, 3, 4, 1]
+        const sumOfNumbers = numbers4.reduce((acc , crr)=>{
+            return acc + crr
+        }, 0)
+        console.log(sumOfNumbers)
+
+    // 5- every()
+    // Check if all the elements in an array are similar in one aspect and return the boolean value (true or false)
+    // Example - 1:- 
+        const names = ['Asabeneh', 'Mathias', 'Elias', 'Brook']
+        const areAllStr = names.every((name)=> typeof(name)==="string") // to check all are string?
+        console.log(areAllStr)
+    // Example - 2:-
+        const bools = [true, true, true, true, false]
+        const checkBools = bools.every((bool)=> bool==true)
+        console.log(checkBools)
+    
+    // 6- find()
+    // Return the first element which satisfies the condition
+    // example :-
+        const ages = [24, 22, 25, 32, 35, 18]
+        const moreThan20 = ages.find((age)=> age >20)
+        console.log(moreThan20)
+
+    // 7- fineIndex()
+    //   Return the position of the first element which satisfies the condition
+    const ages2 = [24, 22, 25, 32, 35, 18]
+        const lessThan20 = ages.findIndex((age)=> age <20)
+        console.log(lessThan20)
+
+    // 8- some()
+    //  Check if some of the elements are similar in one aspect. It returns boolean
+        const bools2 = [false, true, true, false, true]
+        const areSomeTrue = bools2.some((b) =>  b === true)
+        console.log(areSomeTrue) //true
+
+    //------------------ sort()----------------//
+    // this function is usually works well with string values. but it does not work with numeric values
+    // sort() with string values:
+    const products= ['milk', 'coffee', 'sugar', 'honey', 'apple', 'carrot']
+    console.log(products.sort()) // now the original array is also sorted
+    console.log(products)
+    
+    // sorting numeric values :
+    const numbers5 = [5.6, 78.6, 100, 1, 345, 67]
+    console.log(numbers5.sort()) // using sort method to sort number items provide a wrong result. 
+    // to avoid this we use compare callback function inside the sort method , 
+    numbers5.sort(function(a, b){
+        return a-b;
+    })
+    console.log(numbers5)
+
+    // sorting object array
+    // whenever we use sort object in an array , we use the object key to compare .
+    scores.sort((a, b) => {
+        if(a.score < b.score) return -1
+        if(a.score > b.score) return 1
+        return 0
+    })
+    console.log(scores)  // sorted ascending 
+
+
+</script>
+</body>
+</html>

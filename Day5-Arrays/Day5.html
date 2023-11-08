@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dat 05</title>
+</head>
+<body>
+        <h1>Dya 05 is about Arrays</h1>
+        <script>
+        let js ='javascript';
+        console.log(js.split(""));
+        let companies='facebook , google ,microsoft';
+        console.log(companies.split());
+        const arr=[2 ,'h', 56 ,'th' ,7];
+        console.log(arr[arr.length-1]);
+        arr[0]='iqra';
+        console.log(arr);
+
+        //""""""""""""""""""""Methods to manipulate an array""""""""""""""'"""
+        //there are different methods to manipulate an array : Array constructor , length , concat, indexOf , slice , splice , join , toString, includes , lastIndexOf , isArray, fill, push, pop , shift, unshift.
+
+        //Array Constructor: used to create an empty array.
+        const arra = Array();
+        console.log(arra);
+        const createEightEmptyValues= Array(8);
+        console.log(createEightEmptyValues);
+        // fill: fill all the array elements with a static value . 
+        const filll = Array();
+        console.log(filll);
+        const eightvalues = Array(8).fill('h');
+        console.log(eightvalues);
+        const fourvalues = Array(4).fill(4);
+        console.log(fourvalues);
+
+        //concatenating array using concat  
+        const one = [1,2,4,5]
+        const two = [6,7,8,9];
+        console.log(one.concat(two));
+        
+        //Getting array length 
+        console.log(one.length);
+
+        //checking elements in array;
+        console.log(one.indexOf(5));
+
+        // getting lastIndexOf element in array
+        console.log(one.lastIndexOf(4));
+
+        // Includes: check if an element includes in an array . 
+        console.log(two.includes(8));
+
+        //check if array  has data type is array.
+        console.log(Array.isArray(one));
+//to convert an array to string.
+        console.log(one.toString());
+        
+// join: it is used to join the elements of array . the argument we passed in the join method will be joined in the array and returns as a string . By default it joins with a comma. lets see the examples below:
+const numbers = [1,7,6,4,5];
+console.log(numbers);
+const letters = ['iqra','ayesha', 'maryam', 'meerab'];
+console.log(letters.join());
+console.log(letters.join(''))
+console.log(letters.join(' '));
+console.log(letters.join(' , '));
+console.log(letters.join(' | '));
+
+
+// Slice array elements: To cut out a multiple items in range .it takes two parameters :string and ending position .it does not include the ending position;
+console.log(numbers.slice());
+console.log(numbers.slice(0));
+console.log(numbers.slice(1,4))
+//Splice : it takes three parameters : starting position , number of items to be removed and number of items to be added.
+console.log(numbers.splice());
+console.log(numbers.splice(0,1));
+console.log(numbers.splice(0, 2, 8, 9));
+///Adding items to an array using push.
+        //Push:it adds the item in the end . To add the items to the  end of existing array we use the push method.
+        console.log(letters);
+        letters.push('ayan');
+        console.log(letters);
+///Removing the end element using pop
+        //pop:removing item in the end .
+        letters.pop();
+        console.log(letters);
+///Removing an element from the beginning
+        //shift:Removing one element from beginning.
+        letters.shift();
+        console.log(letters);
+///adding an element from the beginning
+        //unshift:adding one element from beginning.
+        letters.unshift();
+        console.log(letters);
+//Reversing array order;
+console.log(letters.reverse());
+//Sorting elements in an array;
+console.log(numbers.sort());
+///Foreach method: it is also a method like looping.
+letters.forEach(function(value){
+        if(value.includes("am")){
+        document.write(value+" ");
+        }
+})
+
+</script>
+</body>
+</html>

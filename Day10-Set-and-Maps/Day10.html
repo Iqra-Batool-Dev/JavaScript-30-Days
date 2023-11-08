@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="country-data.js"></script>
+</head>
+<body>
+    <script>
+        //  SETS and MAPS
+
+//  ------Set----- a set is a collection of unique elements 
+// creating an empty set:
+const companies = new Set()
+console.log(companies)
+
+// creating a Set from an array
+
+    const languages = ['English','Finnish','English','French','Spanish','English','French']
+    const unique = new Set(languages)
+    console.log(unique)
+            //Or
+    const numbers = [1, 5, 6, 3, 8, 4, 6, 5, 1, 2, 7, 8,9]
+    const unNum = new Set(numbers)
+    console.log(unNum)
+
+// Set is an iterable object and we can iterate through each elements.
+    
+    for (const language of unique){
+        console.log(language)
+    }
+
+//adding  elements to a set 
+    const company = new Set()
+    company.add('Apple')
+    company.add('Google')
+    company.add('Facebook')
+    console.log(company)
+
+// we can also use loop to add element to the set
+    const city = [ 'fsd', 'isb', 'lhr', 'muree']
+    const setOfCity = new Set()
+    for(const element of city){
+        setOfCity.add(element)
+    }
+    console.log(setOfCity)
+
+// deleting an element from a set
+
+    setOfCity.delete('lhr')
+    console.log(setOfCity)
+
+// checking an element in a set
+
+    console.log(setOfCity.has('muree')) //true
+    console.log(setOfCity.has('karachi'))// false
+
+// Clearing a set : it remove all elements from a set
+
+    company.clear()
+    console.log(company)
+
+//--------- use of a set -------example below-----------
+
+const languages2 = ['English','Finnish','English','French','Spanish','English','French']
+const langSet = new Set(languages2)
+console.log(langSet)
+
+const counts = []
+for(const language of langSet){
+    const filteredLang = languages2.filter((lng)=> lng===language)
+    counts.push({lang: 'language' , count: filteredLang.length})
+    // console.log(filteredLang)
+}
+console.log(counts)
+
+// --------Union of sets-------
+let a = [1, 2, 3, 4, 5]
+let b = [3, 4, 5, 6]
+let c = [...a , ...b]
+
+let A = new Set(a)
+let B = new Set(b)
+let C = new Set(c)
+
+console.log(C)
+
+// --------INtersection of Sets----
+const  arr1= [1, 2, 3, 4, 5]
+const  arr2 = [3, 4, 5, 6]
+let set1 = new Set(arr1)
+let set2 = new Set(arr2)
+let set3 = arr1.filter((num)=> set2.has(num))
+let set4 = new Set(set3)
+console.log(set4)
+
+// -------- Difference of sets -------------
+const  d= [1, 2, 3, 4, 5]
+const  e = [3, 4, 5, 6]
+let set5 = new Set(d)
+let set6 = new Set(e)
+let set7 = d.filter((num)=> !(set6.has(num)))
+let set8 = new Set(set7)
+console.log(set8)
+
+//-------- Map- ----------//
+//  creating an empty map
+
+const map = new Map()
+console.log(map)
+
+// creating a map from array
+
+countries = [
+    ['Finland', 'Helsinki'], 
+    ['Sweden', 'Stockholm'], 
+    ['Norway', 'Oslo']
+]
+const mapCountry = new Map(countries)
+console.log(mapCountry)
+
+// adding values to map
+map.set('pakistan', 'urdu')
+map.set('india', 'hindi')
+map.set('america', 'english')
+
+console.log(map)
+
+// getting values from map
+console.log(map.get('india', 'hindi'))
+
+// Checking key in Map
+
+console.log(map.has('india', 'hindi'))
+
+// getting values using loop
+
+for(const element of map){
+    console.log(element)
+}
+
+// -------------------------------------------EXERCISE----------------------------------------
+
+// Q No.1- create an empty set
+
+    const mySet = new Set()
+    console.log(mySet)
+
+// Q No.2- Create a set containing 0 to 10 using loop
+
+    const numberSet = new Set()
+    for(let i=0; i<10; i++){
+        numberSet.add(i)
+    }
+    console.log(numberSet)
+
+// Q No.3- Remove an element from set
+
+    numberSet.delete(6)
+    console.log(numberSet)
+
+// Q No.4- Clear a set
+
+    numberSet.clear()
+    console.log(numberSet)
+
+// Q No.5- Create a set of 5 string elements from array
+
+    const food = ['rice', 'floor', 'grains', 'milk', 'fruits']
+    const foodSet = new Set(food)
+    console.log(foodSet)
+
+// Q No.6- Create a map of countries and number of characters of a country
+
+    const country = [
+        ['pakistan', 8],
+        ['india', 5],
+        ['America', 7]
+    ]
+    const countryMap = new Map(country)
+    console.log(countryMap)
+
+//---------------------LeVeL 02 ------------------------------
+
+// Q No.1- find i union k
+    const i = [1, 2, 3, 4, 5]
+    const k = [6, 7, 8, 9]
+    const j = [...i, ...k]
+    
+    const setOfJ = new Set(j)
+    console.log(setOfJ)
+
+// Q No.2- find x intersection y 
+    const x=[1, 2, 3, 4, 5]
+    const y = [5, 6, 7, 8, 9]
+    const setX = new Set(x)
+    const setY = new Set(y)
+
+    const z = x.filter((num)=> setY.has(num))
+    const setZ = new Set(z)
+    console.log(setZ)
+
+// Q No.2- find x difference y 
+const p=[1, 2, 3, 4, 5]
+    const q = [5, 6, 7, 8, 9]
+    const setP = new Set(p)
+    const setQ = new Set(q)
+
+    const r = p.filter((num)=> !setQ.has(num))
+    const setR = new Set(r)
+    console.log(setR)
+
+//---------------------------------------LeVeL 03 ----------------------------
+
+// Q No.1- How many languages are there in the countries object file.
+
+    const allLanguages =[]
+    countries3.forEach(element => {
+    const languages =element.languages
+    languages.forEach((lang)=>allLanguages.push(lang))
+    })
+    const languageSet = new Set(allLanguages)
+    const totalLang = languageSet.size
+    console.log(languageSet)
+    console.log(` there are ${totalLang} languages in the world`)
+
+// Q No.2- *** Use the countries data to find the 10 most spoken languages:
+
+    const mostSpokenLang = (arr , number)=> {
+        const count1= []
+        languageSet.forEach((element)=>{
+            const mostlang ={}
+            const filtered = allLanguages.filter((lang)=> lang===element)
+            const cun = filtered.length
+            mostlang[element] = cun
+            count1.push(mostlang)
+        })
+        
+        count1.sort((a, b)=>{
+            if(Object.values(a) < Object.values(b)) return 1
+            if(Object.values(a) > Object.values(b)) return -1
+            return 0
+        })
+
+        const finalArray = []
+        for(var i=0; i<number ; i++){
+            finalArray.push(count1[i])
+        }
+        
+        return finalArray
+
+    }
+    console.log(mostSpokenLang(allLanguages , 10))
+    console.log(mostSpokenLang(allLanguages , 10))
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //""""""""""""""""""""""""""LEVEL 01"""""""""""""""""""""""""//
+        //Q No.1---
+        let firstName="Iqra";
+        let lastName="Batool";
+        let country="Pakistan";
+        let city="Faisalabad";
+        let age= 20;
+        let isMarried ="No";
+        let year="2023";
+        console.log(typeof(firstName),typeof(country), typeof(city), typeof(age),typeof(year));
+        //Q No.2---check if type of '10' is equal to 10.
+        console.log('10'===10);
+        //Q No.3---Check if parseInt('9.8')is equal to 10;
+        console.log(parseInt('9.8')==10);
+        //Q No.4--- Write three javascript statements which provide truthy value.and write three more statements which provide falsy values.
+        var t_value="abcd123";
+        var t_value="i am a girl";
+        var t_value=true;
+        var f_value=" ";
+        var f_value=0;
+        var f_value= false;
+        var f_value= null; 
+        //Q No.5---check different conditions of comparison operator between two numbers.
+        var compare= 4>3; //true
+        console.log(compare);
+        console.log(4>=3) //true;
+        console.log(4<3); //false
+        console.log(4<=3); //false
+        console.log(4==4); //true
+        console.log(4!=4); //false
+        console.log(4!==4); //false
+        console.log(4===4); //true
+        console.log(4==='4'); //false
+        var string1='python'; 
+        var string2= 'jargon';
+        console.log(string1.length !== string2.length);
+        //Q No.6---figure out the result of the following regular expressions ;
+        console.log(4>3 && 10<12); //true;
+        console.log(4>3 && 10>12); //false
+        console.log(4>3 || 10<12); //true
+        console.log(4>3 || 10>12); //true
+        console.log(!(4>3));//false
+        console.log(!(4<3)); //true
+        console.log(!(false))//true
+        console.log(!(4>3 && 10<12))//false
+        console.log(!(4>3 && 10>12)) //true
+        console.log(!(4==='4'));//true
+        console.log(string1.includes('on') &&string2.includes('on'));//true
+        //Q No.7--- Use the date object to do the following activities;
+        const now = new Date();
+        console.log(now);
+        console.log(now.getFullYear());
+        console.log(now.getMonth());
+        console.log(now.getDay());
+        console.log(now.getDate())
+        console.log(now.getHours());
+        console.log(now.getTime());
+        console.log(now.getMinutes());
+        
+        //""""""""""""""""""""""""""LEVEL 02"""""""""""""""""""""""""""""//
+        // var a=parseInt(prompt("please enter 1st number"));
+        // var b= parseInt(prompt("please enter 2nd number"));
+        // var sum=a+b;
+        // alert(`The sum of entered numbers is :${sum}`);
+        //"""""""""""""""""""""""""LEVEL 03"""""""""""""""""""""//
+        let yyyy = now.getFullYear();
+        let mm=now.getMonth();
+        let dd= now.getDate();
+        let hours =now.getHours();
+        let minutes=now.getMinutes();
+        let formate=(a)=>{
+            if(a<10){
+                a=`0${a}`;
+            }
+                return a;
+        }
+        let formateMonth = formate(mm);
+        let formateDate = formate(dd);
+        let formateHours=formate(hours);
+        let formateMinutes =formate(minutes);
+        console.log(`${yyyy}-${formateMonth}-${formateDate} ${formateHours}:${formateMinutes} PM` );
+    </script>
+</body>
+</html>

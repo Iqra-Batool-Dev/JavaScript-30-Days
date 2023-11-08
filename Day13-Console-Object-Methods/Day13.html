@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Console object methods</title>
+</head>
+<body>
+    <script>
+        // console.log()
+
+        console.log('%d %s of JavaScript', 30, 'Days')
+        console.log('%c30 days of js', 'color: green')
+        console.log(
+            '%c30 days%c %cof%c %cjavascript',
+            'color:green',
+            ' ',
+            'color:yellow',
+            ' ',
+            'color:red'
+        )
+
+        // console.warn()
+
+        console.warn('This is warning')
+
+        // console.error()
+
+        console.error('this  is an error')
+
+        // console.table()
+
+        const names = ['Asabeneh', 'Brook', 'David', 'John']
+        console.table(names)
+
+        const user = {
+        name: 'Asabeneh',
+        title: 'Programmer',
+        country: 'Finland',
+        city: 'Helsinki',
+        age: 250
+        }
+        console.table(user)
+
+        // console.time()
+
+        const countries = [
+        ['Finland', 'Helsinki'],
+        ['Sweden', 'Stockholm'],
+        ['Norway', 'Oslo']
+        ]
+
+        console.time('Regular for loop')
+        for (let i = 0; i < countries.length; i++) {
+        console.log(countries[i][0], countries[i][1])
+        }
+        console.timeEnd('Regular for loop')
+
+        // console.info()
+
+        console.info('30 Days Of JavaScript challenge is trending on Github')
+
+        // console.assert()
+
+        console.assert(4>3 , '4 is greater than 3')
+        console.assert(3>4 ,'3 is not greater than 4')
+
+        // console.group()
+
+        const names2 = ['Asabeneh', 'Brook', 'David', 'John']
+        const countries2 = [
+        ['Finland', 'Helsinki'],
+        ['Sweden', 'Stockholm'],
+        ['Norway', 'Oslo']
+    ]
+        const user2 = {
+        name: 'Asabeneh',
+        title: 'Programmer',
+        country: 'Finland',
+        city: 'Helsinki',
+        age: 250
+        }
+        const users = [
+        {
+        name: 'Asabeneh',
+        title: 'Programmer',
+        country: 'Finland',
+        city: 'Helsinki',
+        age: 250
+        },
+        {
+        name: 'Eyob',
+        title: 'Teacher',
+        country: 'Sweden',
+        city: 'London',
+        age: 25
+        },
+        {
+        name: 'Asab',
+        title: 'Instructor',
+        country: 'Norway',
+        city: 'Oslo',
+        age: 22
+        },
+        {
+        name: 'Matias',
+        title: 'Developer',
+        country: 'Denmark',
+        city: 'Copenhagen',
+        age: 28
+    }
+    ]
+
+        console.group('Names')
+        console.log(names2)
+        console.log(user2)
+        console.groupEnd()
+
+        // console.count()
+
+        const func= ()=>{
+            console.count('this is a function')
+        }
+
+        func()
+        func()
+        func()
+
+        // console.clear() : it cleans the browser console
+
+        
+
+    </script>
+</body>
+</html>

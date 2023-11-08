@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //------------LEVEL No.1-------------//
+        //Q No.1- (a) declare a variable named challange and asign it a value "30 days of java script , (b) print string on browser and (c) also print the length of string on browser "
+        let challenge="30 days of javascript";
+        console.log(challenge);
+        console.log(challenge.length);
+        // Q No.2- (a) change the string into uppercase (b) change the string into lowercase
+        console.log(challenge.toUpperCase());
+        console.log(challenge.toLowerCase())
+        // Q No.3- cut (slice) out the first word of string using substr() or substring()method
+        console.log(challenge.substr(0,2))
+        //Q No.4- slice out the phrase days of javascript from the string
+        console.log(challenge.slice(3,21));
+        //Q No.5- Check if the string contains a word string using include();
+        console.log(challenge.includes("script"));
+        //Q No.6- split the string at space using split()method.
+        console.log(challenge.split('j'));
+        //Q No.7- 'Facebook, Google, Microsoft, Apple, IBM, Oracle, Amazon' split the string by comma and change it to an array.
+        let company="facebook, google, microsoft, apple,ibm, oracle, amazon" ;
+        console.log(company.split(","))
+        //Q No.8- 'change 30 days of javascript' to '30 days of python' using replace()method.
+        console.log(challenge.replace("javascript","python"));
+        //Q No.9- which character is at index 15 in '30 days of javascript' string ? use charAt()method.
+        console.log(challenge.charAt(15));
+        //Q No.10- what is the character of code j in '30 days of javascript ' using charCodeAt()
+        console.log(challenge.charCodeAt("j"));
+        //Q No.11- use indexOf() to determine the position of the first occurrence of 'a' in '30 Days of javascript' 
+        console.log(challenge.indexOf('a'));
+        //Q No.12- use lastIndexOf() to determine the position of the last occurrence of a in 30 days of javascript.
+        console.log(challenge.lastIndexOf("a"));
+        //Q No.13- use search() to find the position of the first occurrence of the days
+        console.log(challenge.search("days"));
+        //Q No.14- startsWith() method with the string 30 days of javascript and make the results true.
+        console.log(challenge.startsWith(30));
+        console.log(challenge.endsWith("pt"));
+        //Q No.15- use match() method to find all the a's in 30 days of javascript.
+        console.log(challenge.match('a'));
+        //Q No.16- use repeate to print the string 2 times.
+        console.log(challenge.repeat(3));
+        //------------------LEVEL No.2--------------//
+        //Q No.1- using console.log() print out the following statement.
+        console.log("there is no element");
+        //Q No.2- check if typeof '10' is exactly equal to '10'.if not make it exactly equal.
+        console.log(typeof(10));
+        //Q No.3-  check if parseFloat("9.8") '10' is exactly equal to '10'.if not make it exactly equal.
+        let num3= parseFloat('9.8');
+        let num4=10;
+        console.log(num3===num4);
+        console.log(num3=num4);
+        //Q no.4- //check if 'on' is found in both python and jargon.
+        let varr="jardon";
+        console.log (varr.includes("on"));
+        //Q No.5- generate a random number between 0 and 100.
+        console.log(Math.random()*101);
+        //Q No.6- Access the 'javascript' string characters using a random number.
+            
+        //Q No.7- 
+        console.log('1\t1\t1\t1\t1\n2\t1\t2\t4\t8\n3\t1\t3\t9\t27\n4\t1\t4\t16\t64\n5\t1\t5\t25\t125')
+        let str="love is love it is only love"
+        console.log(str.match("love"));
+        
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
