@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Storage</title>
+</head>
+<body>
+    <h1>Web Storage</h1>
+
+
+    <script>
+    // There are two objects  used in web storage in js
+    // 1- localStorage 2-sessionStorage
+    // Mainly discuss localStorage
+    // there are multiple object methods used
+    // Set items to localStorage
+
+    //localStorage.setItem('key','value')//it takes two parameters 
+    localStorage.setItem('name', 'Iqra')
+    console.log(localStorage)
+    localStorage.setItem('age', 12)
+    console.log(localStorage)
+
+    //localStorage.getItem('key')
+    localStorage.getItem('age')
+    console.log(localStorage)
+
+    // Storing an array in a localStorage. If we are storing an array, an object or object array, we should stringify the object first. 
+    const skill = ['html', 'css', 'js', 'react', 'node']
+    const skillsJson = JSON.stringify(skill , undefined , 4)
+    localStorage.setItem('skill', skillsJson)
+    console.log(localStorage)
+
+    // As you can see the skill is in a string format. Let us use JSON.parse() to parse it to normal array.
+    const skills = localStorage.getItem('skill')
+    const skillsJson1 = JSON.parse(skills , undefined , 4)
+    console.log(skillsJson1)
+
+    // clearing the localStorage 
+    localStorage.clear()
+
+    
+    </script>
+</body>
+</html>
