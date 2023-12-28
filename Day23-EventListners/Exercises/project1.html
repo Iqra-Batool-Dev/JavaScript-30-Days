@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Generator</title>
+    <style>
+        body{
+            margin:0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container{
+            display:flex;
+            flex-direction: column;
+            width:50%;
+            align-items: center;
+            margin:0 auto;
+
+        }
+        .header{
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            width:100%;
+            margin:10px auto;
+        }
+
+        h1{
+            color:#1f8d1f;
+            margin:3px;
+        }
+        h3{
+            margin:3px;
+        }
+        .author{
+            margin:2px;
+        }
+        .inputSection{
+            width:100%;
+            margin:10px auto;
+            padding:10px;
+        }
+        input{
+            width:70%;
+            padding:5px;
+            border:1px solid #1f8d1f;
+            margin-right: 7px;
+            border-radius: 5px;
+            
+        }
+        input:focus{
+            outline: none;
+        }
+        
+        #btn{
+            width:25%;
+            padding:5px;
+            background-color: #1f8d1f;
+            color:white;
+            border:1px solid #1f8d1f;
+            border-radius: 5px;
+        }
+
+        .numberDiv{
+            width:100%;
+            display: grid;
+            grid-template-columns: repeat(9, 1fr);
+            gap:3px;
+        }
+        #msg{
+            color: #ce2f2f;
+            font-size: 15px;
+            margin:0 auto;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Number Generator</h1>
+            <h3>30DaysOfJavaScript:DOM Day3</h3>
+            <p class="author">Author: Asebeneh Yetayeh</p>
+        </div>
+        <div class="inputSection">
+            <p id="msg"></p>
+            <input type="text" id="number" placeholder="Generate more numbers...">
+            <button id="btn">Generate numbers</button>
+        </div>
+
+        <div class="numberDiv">
+
+        </div>
+
+    </div>
+
+
+    <script src="javaScript1.js"></script>
+</body>
+</html>
