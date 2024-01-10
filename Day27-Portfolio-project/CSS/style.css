@@ -1,0 +1,112 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #f3f3f3;
+    font-family: 'Poppins', sans-serif;
+}
+.container{
+    width:80%;
+    margin: 0px auto;
+}
+
+.author-name{
+    margin:30px 0;
+    font-size: 3rem;
+    font-weight: 500;
+    letter-spacing: 10px;
+}
+.titles{
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+    width:100%;
+    height: 80px;
+    padding:20px;
+    background-color: #9e817a;
+}
+ .skill{
+    /* margin:0 10px; */
+    font-size: 1.5rem;
+    font-weight: 500;
+    animation: translate 2s ease 0s  1 alternate forwards;
+    animation-direction: normal;
+}
+ .icon{
+    font-size: 1.5rem;
+    font-weight: 500;
+    animation: fade-out 1s ease 0s 1 normal forwards;
+}
+
+.bio{
+    width:100%;
+    margin:20px 0;
+}
+
+.courses{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin:10px auto;
+
+}
+
+.card{
+    width:250px;
+    height: 150px;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #e2e0e0;
+    padding:5px;
+    font-size: 18px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: all 0.1s ease-out;
+}
+.card:hover{
+    background-color: #9e817a;
+    font-size: 20px;
+}
+
+.technologies{
+    width:100%;
+    margin:20px auto;
+    padding:10px 0;
+    display:flex;
+    flex-direction: row;
+    align-items:  baseline;
+    gap:7px;
+}
+
+.technologies .topic{
+    font-size: 2.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    animation: fade-out 1s ease 0s 5 alternate forwards;
+    
+}
+
+@keyframes fade-out {
+    0%{
+        opacity:0;
+    }
+    100%{
+        opacity:1;
+    }
+}
+
+@keyframes translate {
+    0%{
+        opacity: 0;
+        transform: translateX(0px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(30px);
+    }
+}
